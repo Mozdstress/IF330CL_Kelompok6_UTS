@@ -1,0 +1,650 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Homemade+Apple&family=Syncopate:wght@700&display=swap");
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  background-color: #c2cef9 !important;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 80vw;
+  margin: 0 auto;
+  padding-bottom: 1vw;
+}
+
+/* INI UNTUK NAVBAR */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  background-color: transparent;
+}
+
+nav dl,
+nav ol,
+nav ul {
+  margin: 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 150px;
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 1rem;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  color: #5419ea;
+}
+
+.nav-links a:hover {
+  color: #2f0549;
+  text-decoration: underline;
+}
+/* SELESAI UNTUK NAVBAR */
+
+/* INI UNTUK BUTTON ADD TASK */
+.center-button {
+  position: relative;
+  background: transparent;
+  padding: 0px;
+  border: none;
+  cursor: pointer;
+  outline-offset: 4px;
+  outline-color: deeppink;
+  transition: filter 250ms;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 2vw auto;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: hsl(226, 25%, 69%);
+  border-radius: 8px;
+  filter: blur(2px);
+  will-change: transform;
+  transform: translateY(2px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  background: linear-gradient(
+    to right,
+    hsl(248, 39%, 39%) 0%,
+    hsl(248, 39%, 49%) 8%,
+    hsl(248, 39%, 39%) 92%,
+    hsl(248, 39%, 29%) 100%
+  );
+}
+
+.front {
+  display: block;
+  position: relative;
+  border-radius: 8px;
+  background: hsl(248, 53%, 58%);
+  padding: 16px 32px;
+  color: white;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 1rem;
+  transform: translateY(-4px);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.center-button:hover {
+  filter: brightness(110%);
+}
+
+.center-button:hover .front {
+  transform: translateY(-6px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.center-button:active .front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.center-button:hover .shadow {
+  transform: translateY(4px);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.center-button:active .shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.center-button:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* SELESAI UNTUK TOMBOL ADD TASK */
+
+/* INI UNTUK TOMBOL LOGOUT  */
+.logout_btn {
+  display: table-cell;
+  vertical-align: middle;
+  border: none;
+  background-color: transparent;
+}
+
+.logout_btn {
+  color: white;
+  margin: auto;
+  width: 150px;
+  line-height: 50px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border-radius: 0px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-color: #031d67;
+  box-shadow: 0px 15px 18px -6px rgba(35, 22, 214, 0.65);
+  transition: all 0.4s;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.logout_btn:hover {
+  background-color: #051749;
+  box-shadow: 0px 22px 19px -8px rgba(16, 8, 119, 0.65);
+  transform: scale(1.02, 1.02);
+}
+
+.logout_btn:active {
+  background-color: #051749;
+  box-shadow: 0px 12px 18px -4px rgba(7, 4, 51, 0.65);
+  transform: scale(0.95, 0.95);
+  transition: all 0.4s -0.125s;
+}
+
+/* SELESAI UNTUK TOMBOL LOGOUT */
+
+.center-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: #5419ea;
+  font-size: 1.5vw;
+  font-family: "Syncopate", sans-serif;
+}
+
+.alert {
+  text-align: center;
+  margin-bottom: 1.5vw;
+}
+
+.card {
+  margin-bottom: 1.5vw;
+  box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+  border-radius: 1.5vw;
+  border-color: #c2cef9;
+  max-height: 10vw;
+}
+
+.card-content {
+  display: flex;
+}
+
+.card:hover {
+  box-shadow: 0 0.5vw 0.5vw rgba(0, 0, 0, 0.1);
+  background-color: #dbd4ff;
+  outline: 0;
+}
+
+.add_task a.btn {
+  width: 16vw; /* Adjusted width */
+  font-size: 1.2vw; /* Reduced font size */
+  margin-top: 1.5vw;
+}
+
+.add_task a.btn:hover {
+  width: 16vw; /* Adjusted width */
+  font-size: 1.2vw; /* Reduced font size */
+  margin-top: 1.5vw;
+  border-radius: 1.5vw;
+  background-color: #1341b5;
+}
+
+.card .text-center {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Tambahkan ini untuk pemasangan vertikal yang sejajar */
+  font-size: 1.2vw;
+}
+
+.card .text-center select {
+  flex: 1;
+  font-size: 1vw;
+  color: rgb(8, 73, 147);
+  border-color: #1341b5;
+  border-style: dashed;
+  border-radius: 5px;
+  font-family: Cambria, Cochin;
+  margin-left: 0.5vw;
+  height: 2.5vw;
+  width: auto;
+}
+
+.card .text-center .btn-container {
+  display: flex;
+  gap: 0.5vw;
+}
+
+.card .text-center .btn-container a.btn {
+  width: auto;
+  font-size: 1vw;
+}
+
+h5.card-title {
+  color: #5419ea;
+  font-weight: bold;
+  font-family: "Open Sans", hebrew;
+  font-size: 1.2vw;
+}
+
+h4.card-subtitle {
+  color: #6b4eea;
+  font-weight: bold;
+  font-family: "Open Sans", hebrew;
+  font-size: 0.9vw;
+}
+
+p.card-text {
+  font-style: italic;
+  font-weight: lighter;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri;
+  font-size: 1.1vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+
+.username-display {
+  text-align: center;
+  margin-bottom: 1.5vw;
+  font-family: "Homemade Apple", cursive;
+  font-weight: bold;
+  font-size: 1.8vw;
+  color: #b196e8;
+  text-shadow: 0.1vw 0.1vw 0.1vw rgba(255, 255, 255, 0.9);
+}
+
+.username-display span {
+  font-weight: bold;
+  color: #9dcdfd;
+}
+
+h2#title.head_title {
+  font-weight: bold;
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 7vw;
+  text-align: center;
+  color: #7a48d6;
+  text-shadow: 0.5vw 0.5vw 0.5vw rgba(255, 255, 255, 0.5);
+  padding-top: 3.5vw;
+}
+
+select {
+  width: 15vw;
+  right: 5vw;
+  z-index: 100;
+  height: 1.5vw;
+  font-size: 1vw;
+}
+
+.logout {
+  color: #ededed;
+  background-color: #0574e3;
+  border-color: #ffffff;
+  border-radius: 1vw;
+  width: 4vw;
+  height: 1.8vw;
+  font-size: 0.8vw;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+  background-image: url("img/head-bg2.jpg");
+  background-size: cover;
+  background-position: center;
+  height: 18vw;
+}
+/* CSS for the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 380px !important;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.close-button {
+  background-color: #c5c1cb;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 15px !important;
+  color: #fff;
+  text-align: center;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.close-button:hover {
+  background-color: #8a888c;
+  color: #fff;
+  border: none;
+}
+
+.confirm-button {
+  display: inline-block;
+  background-color: #b196e8;
+  color: #fff;
+  padding: 10px 20px;
+  margin-top: 15px !important;
+  text-decoration: none;
+  border-radius: 5px;
+  border: none;
+}
+
+.confirm-button:hover {
+  background-color: #7a48d6;
+  border: none;
+}
+
+/* INI UNTUK CHECKBOX */
+.checkbox-label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+}
+
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #5419ea;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 10px;
+  top: 5px;
+  width: 8px;
+  height: 16px;
+  width: 5px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  padding-bottom: 5px;
+}
+
+.checkbox-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* CSS untuk tulisan "Done" */
+.done-text {
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+/* Add a class to strike through the text when a task is done */
+.done {
+  text-decoration: line-through;
+  color: #888; /* You can adjust the color as needed */
+}
+
+/* Media query for screens up to 768px (typical mobile screens) */
+@media screen and (max-width: 768px) {
+  .container {
+    max-width: 95vw;
+  }
+
+  .logo img {
+    width: 100px;
+  }
+
+  .nav-links {
+    font-size: 14px;
+  }
+
+  .center-button {
+    margin: 2vw auto;
+  }
+
+  .header {
+    background-image: url("img/head-bg2.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 40vw;
+    margin-bottom: 20px;
+  }
+
+  .card-content {
+    display: block;
+  }
+
+  .username-display {
+    text-align: center;
+    margin-bottom: 1.5vw;
+    font-family: "Homemade Apple", cursive;
+    font-weight: bold;
+    font-size: 5vw;
+    color: #b196e8;
+    text-shadow: 0.1vw 0.1vw 0.1vw rgba(255, 255, 255, 0.9);
+  }
+
+  h2#title.head_title {
+    font-weight: bold;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 17vw;
+    text-align: center;
+    color: #7a48d6;
+    text-shadow: 0.5vw 0.5vw 0.5vw rgba(255, 255, 255, 0.5);
+    padding-top: 3.5vw;
+  }
+
+  .username-display span {
+    font-weight: bold;
+    color: #9dcdfd;
+  }
+
+  .card {
+    margin-bottom: 1.5vw;
+    box-shadow: 0 0.5vw 1vw rgba(0, 0, 0, 0.1);
+    border-radius: 1.5vw;
+    border-color: #c2cef9;
+    max-height: 35vw;
+    margin-top: 20px;
+  }
+
+  h5.card-title {
+    color: #5419ea;
+    font-weight: bold;
+    font-family: "Open Sans", hebrew;
+    font-size: 5vw;
+  }
+
+  h4.card-subtitle {
+    color: #6b4eea;
+    font-weight: bold;
+    font-family: "Open Sans", hebrew;
+    font-size: 2.5vw;
+  }
+
+  p.card-text {
+    font-style: italic;
+    font-weight: lighter;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri;
+    font-size: 3.5vw;
+  }
+
+  .front {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    background: hsl(248, 53%, 58%);
+    padding: 10px 15px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+  }
+
+  .checkbox-label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+  }
+  
+  .checkbox-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #5419ea;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 2px;
+    width: 8px;
+    height: 16px;
+    width: 5px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+    padding-bottom: 5px;
+  }
+
+  .done-text {
+    font-size: 10px;
+    margin-left: 0px;
+    margin-right: 3vw;
+  }
+
+  .card .text-center .btn-container a.btn {
+    width: auto;
+    font-size: 2.5vw;
+  }
+  
+  .card .text-center select {
+  flex: 1;
+  font-size: 3vw;
+  color: rgb(8, 73, 147);
+  border-color: #1341b5;
+  border-style: dashed;
+  border-radius: 5px;
+  font-family: Cambria, Cochin;
+  width: 12vw;
+  margin-left: 0.5vw;
+  height: 7vw;
+}
+}
